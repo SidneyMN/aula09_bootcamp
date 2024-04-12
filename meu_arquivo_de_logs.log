@@ -1,0 +1,590 @@
+2024-04-11T23:23:24.438532-0400 INFO Chamando função 'pipeline_calcular_kpi_de_vendas_consolidado' com args ('data', ['csv', 'parquet']) e kwargs {} utils_log.py
+2024-04-11T23:23:24.438532-0400 INFO Chamando função 'extrair_dados_e_consolidar' com args ('data',) e kwargs {} utils_log.py
+2024-04-11T23:23:24.485649-0400 INFO Função 'extrair_dados_e_consolidar' retornou             Produto    Categoria  Quantidade  Venda        Data
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17 utils_log.py
+2024-04-11T23:23:24.489703-0400 INFO Chamando função 'calcular_kpi_de_total_de_vendas' com args (            Produto    Categoria  Quantidade  Venda        Data
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17,) e kwargs {} utils_log.py
+2024-04-11T23:23:24.495960-0400 INFO Função 'calcular_kpi_de_total_de_vendas' retornou             Produto    Categoria  Quantidade  Venda        Data  Total
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15   4500
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15    300
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15    500
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16  10500
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16    300
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16    300
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17   3000
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17    420
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17    200 utils_log.py
+2024-04-11T23:23:24.499399-0400 INFO Chamando função 'carregar_dados' com args (            Produto    Categoria  Quantidade  Venda        Data  Total
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15   4500
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15    300
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15    500
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16  10500
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16    300
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16    300
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17   3000
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17    420
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17    200, ['csv', 'parquet']) e kwargs {} utils_log.py
+2024-04-11T23:23:24.518552-0400 ERROR Exceção capturada em 'carregar_dados': Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet. utils_log.py
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+             │         │             └ 'fastparquet'
+             │         └ <function import_module at 0x000001EB0684E5C0>
+             └ <module 'importlib' from 'C:\\Users\\sydne\\.pyenv\\pyenv-win\\versions\\3.12.1\\Lib\\importlib\\__init__.py'>
+  File "C:\Users\sydne\.pyenv\pyenv-win\versions\3.12.1\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'fastparquet'
+           │          └ <function _gcd_import at 0x000001EB757E80E0>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'fastparquet'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\pipeline.py", line 6, in <module>
+    pipeline_calcular_kpi_de_vendas_consolidado(pasta_arquivos, formato_de_saida)
+    │                                           │               └ ['csv', 'parquet']
+    │                                           └ 'data'
+    └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088F8040>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data', ['csv', 'parquet'])
+             └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088D7F60>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 41, in pipeline_calcular_kpi_de_vendas_consolidado
+    carregar_dados(df_calculado, formato_de_saida)
+    │              │             └ ['csv', 'parquet']
+    │              └             Produto    Categoria  Quantidade  Venda        Data  Total
+    │                0    Notebook Gamer  Eletrônicos           3   1500  2...
+    └ <function carregar_dados at 0x000001EB088D7EC0>
+
+> File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+             │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+             └ <function carregar_dados at 0x000001EB088D7E20>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 35, in carregar_dados
+    df.to_parquet('dados.parquet', index=False, engine='fastparquet')
+    │  └ <function DataFrame.to_parquet at 0x000001EB08263740>
+    └             Produto    Categoria  Quantidade  Venda        Data  Total
+      0    Notebook Gamer  Eletrônicos           3   1500  2...
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'index': False, 'engine': 'fastparquet'}
+           │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+           │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+           └ <function DataFrame.to_parquet at 0x000001EB08263600>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\core\frame.py", line 3113, in to_parquet
+    return to_parquet(
+           └ <function to_parquet at 0x000001EB085736A0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 476, in to_parquet
+    impl = get_engine(engine)
+           │          └ 'fastparquet'
+           └ <function get_engine at 0x000001EB08572DE0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 80, in get_engine
+    return FastParquetImpl()
+           └ <class 'pandas.io.parquet.FastParquetImpl'>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 300, in __init__
+    fastparquet = import_optional_dependency(
+                  └ <function import_optional_dependency at 0x000001EB078DE700>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+                      └ "Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparq...
+
+ImportError: Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2024-04-11T23:23:24.518552-0400 ERROR Exceção capturada em 'carregar_dados': Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet. utils_log.py
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+             │         │             └ 'fastparquet'
+             │         └ <function import_module at 0x000001EB0684E5C0>
+             └ <module 'importlib' from 'C:\\Users\\sydne\\.pyenv\\pyenv-win\\versions\\3.12.1\\Lib\\importlib\\__init__.py'>
+  File "C:\Users\sydne\.pyenv\pyenv-win\versions\3.12.1\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'fastparquet'
+           │          └ <function _gcd_import at 0x000001EB757E80E0>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'fastparquet'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\pipeline.py", line 6, in <module>
+    pipeline_calcular_kpi_de_vendas_consolidado(pasta_arquivos, formato_de_saida)
+    │                                           │               └ ['csv', 'parquet']
+    │                                           └ 'data'
+    └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088F8040>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data', ['csv', 'parquet'])
+             └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088D7F60>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 41, in pipeline_calcular_kpi_de_vendas_consolidado
+    carregar_dados(df_calculado, formato_de_saida)
+    │              │             └ ['csv', 'parquet']
+    │              └             Produto    Categoria  Quantidade  Venda        Data  Total
+    │                0    Notebook Gamer  Eletrônicos           3   1500  2...
+    └ <function carregar_dados at 0x000001EB088D7EC0>
+
+> File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+             │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+             └ <function carregar_dados at 0x000001EB088D7E20>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 35, in carregar_dados
+    df.to_parquet('dados.parquet', index=False, engine='fastparquet')
+    │  └ <function DataFrame.to_parquet at 0x000001EB08263740>
+    └             Produto    Categoria  Quantidade  Venda        Data  Total
+      0    Notebook Gamer  Eletrônicos           3   1500  2...
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'index': False, 'engine': 'fastparquet'}
+           │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+           │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+           └ <function DataFrame.to_parquet at 0x000001EB08263600>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\core\frame.py", line 3113, in to_parquet
+    return to_parquet(
+           └ <function to_parquet at 0x000001EB085736A0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 476, in to_parquet
+    impl = get_engine(engine)
+           │          └ 'fastparquet'
+           └ <function get_engine at 0x000001EB08572DE0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 80, in get_engine
+    return FastParquetImpl()
+           └ <class 'pandas.io.parquet.FastParquetImpl'>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 300, in __init__
+    fastparquet = import_optional_dependency(
+                  └ <function import_optional_dependency at 0x000001EB078DE700>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+                      └ "Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparq...
+
+ImportError: Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2024-04-11T23:23:24.518552-0400 ERROR Exceção capturada em 'carregar_dados': Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet. utils_log.py
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+             │         │             └ 'fastparquet'
+             │         └ <function import_module at 0x000001EB0684E5C0>
+             └ <module 'importlib' from 'C:\\Users\\sydne\\.pyenv\\pyenv-win\\versions\\3.12.1\\Lib\\importlib\\__init__.py'>
+  File "C:\Users\sydne\.pyenv\pyenv-win\versions\3.12.1\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'fastparquet'
+           │          └ <function _gcd_import at 0x000001EB757E80E0>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'fastparquet'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\pipeline.py", line 6, in <module>
+    pipeline_calcular_kpi_de_vendas_consolidado(pasta_arquivos, formato_de_saida)
+    │                                           │               └ ['csv', 'parquet']
+    │                                           └ 'data'
+    └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088F8040>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data', ['csv', 'parquet'])
+             └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088D7F60>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 41, in pipeline_calcular_kpi_de_vendas_consolidado
+    carregar_dados(df_calculado, formato_de_saida)
+    │              │             └ ['csv', 'parquet']
+    │              └             Produto    Categoria  Quantidade  Venda        Data  Total
+    │                0    Notebook Gamer  Eletrônicos           3   1500  2...
+    └ <function carregar_dados at 0x000001EB088D7EC0>
+
+> File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+             │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+             └ <function carregar_dados at 0x000001EB088D7E20>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 35, in carregar_dados
+    df.to_parquet('dados.parquet', index=False, engine='fastparquet')
+    │  └ <function DataFrame.to_parquet at 0x000001EB08263740>
+    └             Produto    Categoria  Quantidade  Venda        Data  Total
+      0    Notebook Gamer  Eletrônicos           3   1500  2...
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'index': False, 'engine': 'fastparquet'}
+           │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+           │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+           └ <function DataFrame.to_parquet at 0x000001EB08263600>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\core\frame.py", line 3113, in to_parquet
+    return to_parquet(
+           └ <function to_parquet at 0x000001EB085736A0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 476, in to_parquet
+    impl = get_engine(engine)
+           │          └ 'fastparquet'
+           └ <function get_engine at 0x000001EB08572DE0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 80, in get_engine
+    return FastParquetImpl()
+           └ <class 'pandas.io.parquet.FastParquetImpl'>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 300, in __init__
+    fastparquet = import_optional_dependency(
+                  └ <function import_optional_dependency at 0x000001EB078DE700>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+                      └ "Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparq...
+
+ImportError: Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2024-04-11T23:23:24.588376-0400 ERROR Exceção capturada em 'pipeline_calcular_kpi_de_vendas_consolidado': Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet. utils_log.py
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+             │         │             └ 'fastparquet'
+             │         └ <function import_module at 0x000001EB0684E5C0>
+             └ <module 'importlib' from 'C:\\Users\\sydne\\.pyenv\\pyenv-win\\versions\\3.12.1\\Lib\\importlib\\__init__.py'>
+  File "C:\Users\sydne\.pyenv\pyenv-win\versions\3.12.1\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'fastparquet'
+           │          └ <function _gcd_import at 0x000001EB757E80E0>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'fastparquet'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\pipeline.py", line 6, in <module>
+    pipeline_calcular_kpi_de_vendas_consolidado(pasta_arquivos, formato_de_saida)
+    │                                           │               └ ['csv', 'parquet']
+    │                                           └ 'data'
+    └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088F8040>
+
+> File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data', ['csv', 'parquet'])
+             └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088D7F60>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 41, in pipeline_calcular_kpi_de_vendas_consolidado
+    carregar_dados(df_calculado, formato_de_saida)
+    │              │             └ ['csv', 'parquet']
+    │              └             Produto    Categoria  Quantidade  Venda        Data  Total
+    │                0    Notebook Gamer  Eletrônicos           3   1500  2...
+    └ <function carregar_dados at 0x000001EB088D7EC0>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+             │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+             └ <function carregar_dados at 0x000001EB088D7E20>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 35, in carregar_dados
+    df.to_parquet('dados.parquet', index=False, engine='fastparquet')
+    │  └ <function DataFrame.to_parquet at 0x000001EB08263740>
+    └             Produto    Categoria  Quantidade  Venda        Data  Total
+      0    Notebook Gamer  Eletrônicos           3   1500  2...
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'index': False, 'engine': 'fastparquet'}
+           │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+           │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+           └ <function DataFrame.to_parquet at 0x000001EB08263600>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\core\frame.py", line 3113, in to_parquet
+    return to_parquet(
+           └ <function to_parquet at 0x000001EB085736A0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 476, in to_parquet
+    impl = get_engine(engine)
+           │          └ 'fastparquet'
+           └ <function get_engine at 0x000001EB08572DE0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 80, in get_engine
+    return FastParquetImpl()
+           └ <class 'pandas.io.parquet.FastParquetImpl'>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 300, in __init__
+    fastparquet = import_optional_dependency(
+                  └ <function import_optional_dependency at 0x000001EB078DE700>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+                      └ "Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparq...
+
+ImportError: Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2024-04-11T23:23:24.588376-0400 ERROR Exceção capturada em 'pipeline_calcular_kpi_de_vendas_consolidado': Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet. utils_log.py
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+             │         │             └ 'fastparquet'
+             │         └ <function import_module at 0x000001EB0684E5C0>
+             └ <module 'importlib' from 'C:\\Users\\sydne\\.pyenv\\pyenv-win\\versions\\3.12.1\\Lib\\importlib\\__init__.py'>
+  File "C:\Users\sydne\.pyenv\pyenv-win\versions\3.12.1\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'fastparquet'
+           │          └ <function _gcd_import at 0x000001EB757E80E0>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'fastparquet'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\pipeline.py", line 6, in <module>
+    pipeline_calcular_kpi_de_vendas_consolidado(pasta_arquivos, formato_de_saida)
+    │                                           │               └ ['csv', 'parquet']
+    │                                           └ 'data'
+    └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088F8040>
+
+> File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data', ['csv', 'parquet'])
+             └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088D7F60>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 41, in pipeline_calcular_kpi_de_vendas_consolidado
+    carregar_dados(df_calculado, formato_de_saida)
+    │              │             └ ['csv', 'parquet']
+    │              └             Produto    Categoria  Quantidade  Venda        Data  Total
+    │                0    Notebook Gamer  Eletrônicos           3   1500  2...
+    └ <function carregar_dados at 0x000001EB088D7EC0>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+             │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+             └ <function carregar_dados at 0x000001EB088D7E20>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 35, in carregar_dados
+    df.to_parquet('dados.parquet', index=False, engine='fastparquet')
+    │  └ <function DataFrame.to_parquet at 0x000001EB08263740>
+    └             Produto    Categoria  Quantidade  Venda        Data  Total
+      0    Notebook Gamer  Eletrônicos           3   1500  2...
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'index': False, 'engine': 'fastparquet'}
+           │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+           │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+           └ <function DataFrame.to_parquet at 0x000001EB08263600>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\core\frame.py", line 3113, in to_parquet
+    return to_parquet(
+           └ <function to_parquet at 0x000001EB085736A0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 476, in to_parquet
+    impl = get_engine(engine)
+           │          └ 'fastparquet'
+           └ <function get_engine at 0x000001EB08572DE0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 80, in get_engine
+    return FastParquetImpl()
+           └ <class 'pandas.io.parquet.FastParquetImpl'>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 300, in __init__
+    fastparquet = import_optional_dependency(
+                  └ <function import_optional_dependency at 0x000001EB078DE700>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+                      └ "Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparq...
+
+ImportError: Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2024-04-11T23:23:24.588376-0400 ERROR Exceção capturada em 'pipeline_calcular_kpi_de_vendas_consolidado': Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet. utils_log.py
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+             │         │             └ 'fastparquet'
+             │         └ <function import_module at 0x000001EB0684E5C0>
+             └ <module 'importlib' from 'C:\\Users\\sydne\\.pyenv\\pyenv-win\\versions\\3.12.1\\Lib\\importlib\\__init__.py'>
+  File "C:\Users\sydne\.pyenv\pyenv-win\versions\3.12.1\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'fastparquet'
+           │          └ <function _gcd_import at 0x000001EB757E80E0>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'fastparquet'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\pipeline.py", line 6, in <module>
+    pipeline_calcular_kpi_de_vendas_consolidado(pasta_arquivos, formato_de_saida)
+    │                                           │               └ ['csv', 'parquet']
+    │                                           └ 'data'
+    └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088F8040>
+
+> File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data', ['csv', 'parquet'])
+             └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x000001EB088D7F60>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 41, in pipeline_calcular_kpi_de_vendas_consolidado
+    carregar_dados(df_calculado, formato_de_saida)
+    │              │             └ ['csv', 'parquet']
+    │              └             Produto    Categoria  Quantidade  Venda        Data  Total
+    │                0    Notebook Gamer  Eletrônicos           3   1500  2...
+    └ <function carregar_dados at 0x000001EB088D7EC0>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\utils_log.py", line 37, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+             │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+             └ <function carregar_dados at 0x000001EB088D7E20>
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\etl.py", line 35, in carregar_dados
+    df.to_parquet('dados.parquet', index=False, engine='fastparquet')
+    │  └ <function DataFrame.to_parquet at 0x000001EB08263740>
+    └             Produto    Categoria  Quantidade  Venda        Data  Total
+      0    Notebook Gamer  Eletrônicos           3   1500  2...
+
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'index': False, 'engine': 'fastparquet'}
+           │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+           │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+           └ <function DataFrame.to_parquet at 0x000001EB08263600>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\core\frame.py", line 3113, in to_parquet
+    return to_parquet(
+           └ <function to_parquet at 0x000001EB085736A0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 476, in to_parquet
+    impl = get_engine(engine)
+           │          └ 'fastparquet'
+           └ <function get_engine at 0x000001EB08572DE0>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 80, in get_engine
+    return FastParquetImpl()
+           └ <class 'pandas.io.parquet.FastParquetImpl'>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\io\parquet.py", line 300, in __init__
+    fastparquet = import_optional_dependency(
+                  └ <function import_optional_dependency at 0x000001EB078DE700>
+  File "C:\Users\sydne\OneDrive\Pessoal\workspace\engenharia_dados\jornada\aula09_bootcamp\.venv\Lib\site-packages\pandas\compat\_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+                      └ "Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparq...
+
+ImportError: Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2024-04-11T23:24:08.248889-0400 INFO Chamando função 'pipeline_calcular_kpi_de_vendas_consolidado' com args ('data', ['csv', 'parquet']) e kwargs {} utils_log.py
+2024-04-11T23:24:08.249309-0400 INFO Chamando função 'extrair_dados_e_consolidar' com args ('data',) e kwargs {} utils_log.py
+2024-04-11T23:24:08.258342-0400 INFO Função 'extrair_dados_e_consolidar' retornou             Produto    Categoria  Quantidade  Venda        Data
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17 utils_log.py
+2024-04-11T23:24:08.264319-0400 INFO Chamando função 'calcular_kpi_de_total_de_vendas' com args (            Produto    Categoria  Quantidade  Venda        Data
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17,) e kwargs {} utils_log.py
+2024-04-11T23:24:08.269331-0400 INFO Função 'calcular_kpi_de_total_de_vendas' retornou             Produto    Categoria  Quantidade  Venda        Data  Total
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15   4500
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15    300
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15    500
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16  10500
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16    300
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16    300
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17   3000
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17    420
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17    200 utils_log.py
+2024-04-11T23:24:08.269331-0400 INFO Chamando função 'carregar_dados' com args (            Produto    Categoria  Quantidade  Venda        Data  Total
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15   4500
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15    300
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15    500
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16  10500
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16    300
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16    300
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17   3000
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17    420
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17    200, ['csv', 'parquet']) e kwargs {} utils_log.py
+2024-04-11T23:24:08.838815-0400 INFO Função 'carregar_dados' retornou None utils_log.py
+2024-04-11T23:24:08.838815-0400 INFO Função 'pipeline_calcular_kpi_de_vendas_consolidado' retornou None utils_log.py
